@@ -1,8 +1,8 @@
 # Raman Spectra Analysis
 
-I wrote code that takes messy instrument files and turns them into a clean list of vibration peaks, then checks those peaks against public reference values. In plain terms: Raman spectra are light-scattering measurements that show how molecules vibrate. Each vibration shows up as a peak at a particular wavenumber, measured in cm^-1. This code cleans up files in different formats, finds those peaks, and compares them with published NIST reference values for carbon tetrachloride (CCl4) and chloroform (CHCl3).
+This code takes messy instrument files and turns them into a clean list of vibration peaks, then checks those peaks against public reference values. In plain terms: Raman spectra are light-scattering measurements that show how molecules vibrate. Each vibration shows up as a peak at a particular wavenumber, measured in cm^-1. The code cleans up files in different formats, finds those peaks, and compares them with published NIST reference values for carbon tetrachloride (CCl4) and chloroform (CHCl3).
 
-I collected the Raman spectra and wrote all the analysis code in this repo.
+The Raman spectra were collected by the author, and all analysis code in this repo was written by the author.
 
 ## What the code does
 
@@ -17,11 +17,11 @@ The notebook also runs an FT-IR cross-check on the same molecules and produces 8
 
 - Measured peaks sit 20–30 cm^-1 below the NIST values across the board, about 3–4% at these wavenumbers. That is consistent with a systematic calibration offset, not an error in any single peak.
 - The v1+v4 combination band appears at 773 cm^-1, overlapping the v3 band in the 760–790 cm^-1 region.
-- The simple valence force-field model fails quantitatively. It uses a stretching force constant of about 434,000 dyne/cm and a bending force constant of about 33,000 dyne/cm, and it predicts v4 at 262.1 cm^-1 vs 314 observed (17% low) and v3 at 1113.6 cm^-1 vs ~773 observed (44% high). It cannot describe the asymmetric stretch. I report those numbers as a failed model, not as a success.
+- The simple valence force-field model fails quantitatively. It uses a stretching force constant of about 434,000 dyne/cm and a bending force constant of about 33,000 dyne/cm, and it predicts v4 at 262.1 cm^-1 vs 314 observed (17% low) and v3 at 1113.6 cm^-1 vs ~773 observed (44% high). It cannot describe the asymmetric stretch. Those numbers are reported as a failed model, not as a success.
 
 ## How to run it
 
-Open `raman-spectra-analysis.nb` in Mathematica and run it top to bottom. It loads the spectra from Wolfram Cloud, so you'll need a connection.
+Open `raman-spectra-analysis.nb` in Mathematica and run it top to bottom. It loads the spectra from Wolfram Cloud, so a connection is needed.
 
 Expected output: cleaned spectra for CCl4 and CHCl3, peak tables with NIST comparisons, the FT-IR cross-check table, the force-field model values above, and 8 plots.
 
