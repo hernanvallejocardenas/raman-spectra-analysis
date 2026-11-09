@@ -1,11 +1,33 @@
 # Raman Spectra Analysis
 
-I wrote this in Mathematica for a physical chemistry lab, to analyze Raman spectra of carbon tetrachloride and chloroform and work out their vibrational modes.
+I wrote code that takes messy instrument files and turns them into a clean list of vibration peaks, then checks those peaks against public reference values. In plain terms: Raman spectra are light-scattering measurements that show how molecules vibrate. Each vibration shows up as a peak at a particular wavenumber, measured in cm^-1. This code cleans up files in different formats, finds those peaks, and compares them with published NIST reference values for carbon tetrachloride (CCl4) and chloroform (CHCl3).
 
-The notebook takes raw spectra in a few different formats (.jdx, .xlsx, .txt), cleans them up, finds the peaks, and matches them against the NIST reference values. The main pieces are a cleaning function that handles the different file formats, a peak finder that smooths the data and picks out the real peaks, and a matching function that assigns each peak to a vibrational mode and checks whether the mode is actually allowed to show up in Raman.
+I collected the Raman spectra and wrote all the analysis code in this repo.
 
-A few things that came out of it. The v1+v4 combination band lands at 773 cm^-1, right on top of the v3 band around 760-790, which is the Fermi resonance, and both modes have the same T2 symmetry, so that checks out. I also built a simple valence force field model for CCl4 and solved for the stretching and bending force constants (about 434,000 and 33,000 dyne/cm). The model gets v4 roughly right but misses v3 badly, which is expected, it can't handle the asymmetric stretch. And the measured peaks sit about 20-30 cm^-1 below the NIST values across the board, which looks like a calibration offset in the instrument rather than a problem with any one peak.
+## What the code does
 
-The spectra were collected by our lab group, so some of the files are from my lab partner. The analysis is mine.
+- `CleanData[importedData]` reads `.jdx` and `.xlsx` files and normalises them to a common format. Only those two formats are handled.
+- `GetMajorPeaks[cleanData, sigma, relThreshold]` smooths each spectrum and picks out the major peaks above a relative threshold.
+- `FindMatch[exptVal, compList]` matches each measured peak to the nearest computed peak.
+- `CheckPresence[ramanVal, ftirList]` checks whether a Raman peak also appears in the FT-IR peak list. That is an overlap check only. It is not a symmetry analysis, and it does not determine whether a mode is Raman-allowed.
 
-Open Lab7-1_2.nb in Mathematica and run it. It imports the data from Wolfram Cloud, so you'll need a connection.
+The notebook also runs an FT-IR cross-check on the same molecules and produces 8 plots comparing measured, computed, and FT-IR spectra.
+
+## What the numbers say
+
+- Measured peaks sit 20–30 cm^-1 below the NIST values across the board, about 3–4% at these wavenumbers. That is consistent with a systematic calibration offset, not an error in any single peak.
+- The v1+v4 combination band appears at 773 cm^-1, overlapping the v3 band in the 760–790 cm^-1 region.
+- The simple valence force-field model fails quantitatively. It uses a stretching force constant of about 434,000 dyne/cm and a bending force constant of about 33,000 dyne/cm, and it predicts v4 at 262.1 cm^-1 vs 314 observed (17% low) and v3 at 1113.6 cm^-1 vs ~773 observed (44% high). It cannot describe the asymmetric stretch. I report those numbers as a failed model, not as a success.
+
+## How to run it
+
+Open `raman-spectra-analysis.nb` in Mathematica and run it top to bottom. It loads the spectra from Wolfram Cloud, so you'll need a connection.
+
+Expected output: cleaned spectra for CCl4 and CHCl3, peak tables with NIST comparisons, the FT-IR cross-check table, the force-field model values above, and 8 plots.
+
+## Files
+
+- `raman-spectra-analysis.nb` — the analysis notebook
+- `README.md` — this file
+
+Code in this repo is under the MIT licence.
