@@ -2,8 +2,6 @@
 
 This code takes messy instrument files and turns them into a clean list of vibration peaks, then checks those peaks against public reference values. In plain terms: Raman spectra are light-scattering measurements that show how molecules vibrate. Each vibration shows up as a peak at a particular wavenumber, measured in cm^-1. The code cleans up files in different formats, finds those peaks, and compares them with published NIST reference values for carbon tetrachloride (CCl4) and chloroform (CHCl3).
 
-The Raman spectra were collected by the author, and all analysis code in this repo was written by the author.
-
 ## What the code does
 
 - `CleanData[importedData]` reads `.jdx` and `.xlsx` files and normalises them to a common format. Only those two formats are handled.
