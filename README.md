@@ -4,7 +4,7 @@ This code takes messy instrument files and turns them into a clean list of vibra
 
 ## What the code does
 
-- `CleanData[importedData]` reads `.jdx` and `.xlsx` files and normalises them to a common format. Only those two formats are handled.
+- `CleanData[importedData]` reads `.jdx` and `.csv` files and normalises them to a common format. Only those two formats are handled.
 - `GetMajorPeaks[cleanData, sigma, relThreshold]` smooths each spectrum and picks out the major peaks above a relative threshold.
 - `FindMatch[exptVal, compList]` matches each measured peak to the nearest computed peak.
 - `CheckPresence[ramanVal, ftirList]` checks whether a Raman peak also appears in the FT-IR peak list. That is an overlap check only. It is not a symmetry analysis, and it does not determine whether a mode is Raman-allowed.
@@ -19,7 +19,7 @@ The notebook also runs an FT-IR cross-check on the same molecules and produces 8
 
 ## How to run it
 
-Open `raman-spectra-analysis.nb` in Mathematica and run it top to bottom. It loads the spectra from Wolfram Cloud, so a connection is needed.
+Open `raman-spectra-analysis.nb` in Mathematica and run it top to bottom. It loads the spectra from the `data/` folder in this repo, so no internet connection is needed.
 
 Expected output: cleaned spectra for CCl4 and CHCl3, peak tables with NIST comparisons, the FT-IR cross-check table, the force-field model values above, and 8 plots.
 
@@ -27,5 +27,9 @@ Expected output: cleaned spectra for CCl4 and CHCl3, peak tables with NIST compa
 
 - `raman-spectra-analysis.nb` — the analysis notebook
 - `README.md` — this file
+- `data/` — the spectra the notebook loads:
+  - `CCL4-IR.jdx`, `spectrum.jdx`, `spectrum-2.jdx`, `spectrum-3.jdx`, `spectrum-4.jdx` — computed and FT-IR spectra (JCAMP-DX)
+  - `CCl4-Raman.csv`, `CHCl3-Raman.csv` — experimental Raman spectra
+  - `CHCl3-FTIR.jdx` — FT-IR spectrum for CHCl3
 
 Code in this repo is under the MIT licence.

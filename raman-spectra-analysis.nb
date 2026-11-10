@@ -1,6 +1,6 @@
 Notebook[{Cell[
 CellGroupData[{Cell[
-TextData[{"Lab"," ","7",StyleBox[RowBox[{"-"," "}]],"Raman"," ","Spectroscopy"," ","of"," ","CCl4"," ","and"," ","CHCl3"}],
+TextData[{"Raman"," ","Spectroscopy"," ","of"," ","CCl4"," ","and"," ","CHCl3"}],
 "Title",ExpressionUUID -> "c66849e5-47be-4a8c-9d80-08e325f9be77"],Cell[
 CellGroupData[
 {Cell[
@@ -19,19 +19,18 @@ RowBox[{","," "}]],"as"," ","to"," ","not"," ","regenerate"," ","output",StyleBo
 RowBox[{")."," "}]]}],"Item",ExpressionUUID -> "40e51dc0-f5ff-4f51-8ad8-d78a28a3b551"]},
 Open],ExpressionUUID -> "a7fc6de0-05de-4f8e-b3b4-965386b4d856"],Cell[
 BoxData[{RowBox[
-{"\n","\n",RowBox[{RowBox[{"CCl4IR","=",RowBox[{"CloudImport","[","\"https://www.wolframcloud.com/obj/hvallejocardenas/CCL4-IR.jdx\"","]"}]}],";"}]}],"\n",RowBox[
-{RowBox[{"CCl4CompRaman","=",RowBox[{"CloudImport","[","\"https://www.wolframcloud.com/obj/hvallejocardenas/spectrum-4.jdx\"","]"}]}],";"}],"\n",RowBox[
-{RowBox[{"CHCl3IR","=",RowBox[{"CloudImport","[","\"https://www.wolframcloud.com/obj/hvallejocardenas/spectrum.jdx\"","]"}]}],";"}],"\n",RowBox[
-{RowBox[{"CHCl3CompRaman","=",RowBox[{"CloudImport","[","\"https://www.wolframcloud.com/obj/hvallejocardenas/spectrum-2.jdx\"","]"}]}],";"}],"\n",RowBox[
-{RowBox[{"ExptCCl4Raman","=",RowBox[{"CloudImport","[","\"https://www.wolframcloud.com/obj/hvallejocardenas/Lorenzo%20CCl4.xlsx\"","]"}]}],";"}],"\n",RowBox[
-{RowBox[{"ExptCHCl3Raman","="," ",RowBox[{"CloudImport","[","\"https://www.wolframcloud.com/obj/hvallejocardenas/Lorenzo%20CHCl3.xlsx\"","]"}]}],";"}],"\n",RowBox[
-{RowBox[{"CCl4FTIR"," ","="," ",RowBox[{"CloudImport","[","\"https://www.wolframcloud.com/obj/hvallejocardenas/spectrum-3.jdx\"","]"}]}],";"}],"\n",RowBox[
-{RowBox[{RowBox[{"CHCl3FTIR"," ","="," ",RowBox[{"CloudImport","[","\"https://www.wolframcloud.com/obj/hvallejocardenas/lorenzo%20chcl3.JDX\"","]"}]}],";"}],"\n","\n"}]}],
+{"\n","\n",RowBox[{RowBox[{"CCl4IR","=",RowBox[{"Import","[","\"data/CCL4-IR.jdx\"","]"}]}],";"}]}],"\n",RowBox[
+{RowBox[{"CCl4CompRaman","=",RowBox[{"Import","[","\"data/spectrum-4.jdx\"","]"}]}],";"}],"\n",RowBox[
+{RowBox[{"CHCl3IR","=",RowBox[{"Import","[","\"data/spectrum.jdx\"","]"}]}],";"}],"\n",RowBox[
+{RowBox[{"CHCl3CompRaman","=",RowBox[{"Import","[","\"data/spectrum-2.jdx\"","]"}]}],";"}],"\n",RowBox[
+{RowBox[{"ExptCCl4Raman","=",RowBox[{"Import","[","\"data/CCl4-Raman.csv\"","]"}]}],";"}],"\n",RowBox[
+{RowBox[{"ExptCHCl3Raman","="," ",RowBox[{"Import","[","\"data/CHCl3-Raman.csv\"","]"}]}],";"}],"\n",RowBox[
+{RowBox[{"CCl4FTIR"," ","="," ",RowBox[{"Import","[","\"data/spectrum-3.jdx\"","]"}]}],";"}],"\n",RowBox[
+{RowBox[{RowBox[{"CHCl3FTIR"," ","="," ",RowBox[{"Import","[","\"data/CHCl3-FTIR.jdx\"","]"}]}],";"}],"\n","\n"}]}],
 "Input",CellLabel -> "In[179]:= ",ExpressionUUID -> "fa24cdca-bb3c-44ee-816f-9bd40a09e0fc",
 CloudRendering -> "InteractiveBoxes"],Cell[
 CellGroupData[{Cell[
-TextData[{"Question"," ","1"," ","and"," ","2",StyleBox[
-RowBox[{":"," "}]],"Plotting"," ","and"," ","Table"}],"Chapter",ExpressionUUID -> "04b0381c-157f-47b7-90db-cca93e8fc39e"],Cell[
+TextData[{"Plotting"," ","and"," ","Table"}],"Chapter",ExpressionUUID -> "04b0381c-157f-47b7-90db-cca93e8fc39e"],Cell[
 TextData[
 {"In"," ","this"," ","cell",StyleBox[RowBox[{","," "}]],"I"," ","Imported"," ","and"," ","cleaned"," ","experimental"," ","Raman"," ","and"," ","FT","-","IR"," ","data"," ","alongside"," ","computational"," ","WebMO"," ","predictions"," ","to"," ","generate"," ","comparative"," ","spectral"," ","plots",StyleBox[
 RowBox[{"."," ","\[NonBreakingSpace]"}]],"Automated"," ","peak","-","finding"," ","algorithms"," ","were"," ","used"," ","to"," ","identify"," ","vibrational"," ","frequencies"," ","and"," ","degeneracies",StyleBox[
@@ -230,7 +229,7 @@ RowBox[{RowBox[{"(*"," ",RowBox[{"6."," ","Computational"," ","IR"," ","Plots"}]
 {"FrameLabel"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"\"Energy (cm^-1)\"",","," ","\"Intensity\""}],"}"}]}],","," ",RowBox[
 {"ImageSize"," ","\[Rule]"," ","Large"}]}],"]"}]}],";"}],RowBox[{"\n","\n"}],StyleBox[
 RowBox[{RowBox[{"(*"," ",RowBox[{"Display"," ","Individual"," ","Plots"}]," ","*)"}],"\n","ExptCCl4RamanPlot"}]],"\n","ExptCHCl3RamanPlot","\n","CCl4CompRamanPlot","\n","CHCl3CompRamanPlot","\n","CCl4FTIRPlot","\n","CHCl3FTIRPlot","\n","CCl4IRPlot","\n","CHCl3IRPlot",RowBox[
-{"\n","\n"}],RowBox[{RowBox[{"Print","[","\"Question 2: The experimentally observed vib. frequencies for CCl4 show agreement with calculated values. The modes in the 180-60 cm^-1 region differ from calculations by approximately 20-35 cm^-1 which is consistent with expectations. However, in the region of v3 there are large discrepancies of up to 60 cm^-1  \nFor CHCl3 the calculated frequencies show strong agreement with the experimental values. The modes fall within 10-40 cm^-1. THe largest deviations occur in the C-H stretching bend. \"","]"}],"\n","\n","\n","\n"}]}],
+{"\n","\n"}],RowBox[{RowBox[{"Print","[","\"The experimentally observed vib. frequencies for CCl4 show agreement with calculated values. The modes in the 180-60 cm^-1 region differ from calculations by approximately 20-35 cm^-1 which is consistent with expectations. However, in the region of v3 there are large discrepancies of up to 60 cm^-1  \nFor CHCl3 the calculated frequencies show strong agreement with the experimental values. The modes fall within 10-40 cm^-1. THe largest deviations occur in the C-H stretching bend. \"","]"}],"\n","\n","\n","\n"}]}],
 "Input",NumberMarks -> False,CellLabel -> "In[187]:= ",ExpressionUUID -> "6bc8fe5b-b94a-4269-ba06-ab4ff491147c",
 CloudRendering -> "InteractiveBoxes"],Cell[
 BoxData["\"1. Processing Data ...\"",
@@ -433,32 +432,32 @@ TraditionalForm],PlotRange -> {{0.`,3200.`},{0,320.0075868075394`}},PlotRangeCli
 True]},ExpressionUUID -> "1d8266f6-bf0b-41f6-8222-044365cc6bcb"],StandardForm],"Output",
 CellLabel -> "Out[234]= ",ExpressionUUID -> "43ececa1-675a-4b1f-912f-73264cfc1237"],Cell[
 BoxData[
-"\"Question 2: The experimentally observed vib. frequencies for CCl4 show agreement with calculated values. The modes in the 180-60 cm^-1 region differ from calculations by approximately 20-35 cm^-1 which is consistent with expectations. However, in the region of v3 there are large discrepancies of up to 60 cm^-1  \\nFor CHCl3 the calculated frequencies show strong agreement with the experimental values. The modes fall within 10-40 cm^-1. THe largest deviations occur in the C-H stretching bend. \"",
+"\"The experimentally observed vib. frequencies for CCl4 show agreement with calculated values. The modes in the 180-60 cm^-1 region differ from calculations by approximately 20-35 cm^-1 which is consistent with expectations. However, in the region of v3 there are large discrepancies of up to 60 cm^-1  \\nFor CHCl3 the calculated frequencies show strong agreement with the experimental values. The modes fall within 10-40 cm^-1. THe largest deviations occur in the C-H stretching bend. \"",
 StandardForm],"Print",ExpressionUUID -> "ca464be5-5a36-4d84-9656-1380880b5ed9"]},
 Open],ExpressionUUID -> "31a6bc68-c92a-489f-9ddc-4e3196ebe3e1"]},Open],ExpressionUUID -> "30a6f3b0-e632-46a1-a5bd-e16bad5ae29b"],Cell[
 CellGroupData[
 {Cell[
-TextData[{"Questions"," ","3"," ","and"," ","4",":"}],"Chapter",ExpressionUUID -> "bbb4b3e9-a363-4e8c-b14c-d2f17430cd6a"],Cell[
+TextData[{"Vibrational Modes and Degeneracy"}],"Chapter",ExpressionUUID -> "bbb4b3e9-a363-4e8c-b14c-d2f17430cd6a"],Cell[
 TextData[
 {"I"," ","calculated"," ","the"," ","total"," ","vibrational"," ","modes",StyleBox[
 RowBox[{" ","("}]],"3N","-","6",StyleBox[RowBox[{")"," "}]],"for"," ","both"," ","molecules"," ","and"," ","compared"," ","num",StyleBox[
-RowBox[{"."," "}]],"of"," ","peaks",StyleBox[RowBox[{"."," "}]],"Questions"," ","are"," ","printed"," ","below",":"}],
+RowBox[{"."," "}]],"of"," ","peaks",StyleBox[RowBox[{"."," "}]],"The analysis"," ","is"," ","printed"," ","below",":"}],
 "Text",ExpressionUUID -> "8c678580-42d4-4a4c-b2ee-a2ab76d91cf8"],Cell[
 CellGroupData[
 {Cell[
-BoxData[{RowBox[{"Print","[","\"Question 3: Both molecules have 9 normal vibrational modes (3N \[Dash] 6 for 5-atom, non-linear molecules). CCl4 has very high symmetry so several vibrations are identical in energy (degeneracies).Although it has 9 modes, it only has 4 peaks. CHCl3 has less symmetry and thus less degeneracies. It has 6 peaks instead of 4.\"","]"}],"\n",RowBox[
-{RowBox[{"Print","[","\"Question 4: CHCl3 has a C-H bond which is lighter than C-Cl bonds. When atoms are lighter, frequency increases. \"","]"}],"\n"}]}],
+BoxData[{RowBox[{"Print","[","\"Both molecules have 9 normal vibrational modes (3N \[Dash] 6 for 5-atom, non-linear molecules). CCl4 has very high symmetry so several vibrations are identical in energy (degeneracies).Although it has 9 modes, it only has 4 peaks. CHCl3 has less symmetry and thus less degeneracies. It has 6 peaks instead of 4.\"","]"}],"\n",RowBox[
+{RowBox[{"Print","[","\"CHCl3 has a C-H bond which is lighter than C-Cl bonds. When atoms are lighter, frequency increases. \"","]"}],"\n"}]}],
 "Input",CellLabel -> "In[236]:= ",ExpressionUUID -> "d7159811-1b40-4d2a-bdda-ab085108d399"],Cell[
 BoxData[
-"\"Question 3: Both molecules have 9 normal vibrational modes (3N \[Dash] 6 for 5-atom, non-linear molecules). CCl4 has very high symmetry so several vibrations are identical in energy (degeneracies).Although it has 9 modes, it only has 4 peaks. CHCl3 has less symmetry and thus less degeneracies. It has 6 peaks instead of 4.\"",
+"\"Both molecules have 9 normal vibrational modes (3N \[Dash] 6 for 5-atom, non-linear molecules). CCl4 has very high symmetry so several vibrations are identical in energy (degeneracies).Although it has 9 modes, it only has 4 peaks. CHCl3 has less symmetry and thus less degeneracies. It has 6 peaks instead of 4.\"",
 StandardForm],"Print",ExpressionUUID -> "7fa3159e-b8a1-4311-b41d-772d22745e8c"],Cell[
 BoxData[
-"\"Question 4: CHCl3 has a C-H bond which is lighter than C-Cl bonds. When atoms are lighter, frequency increases. \"",
+"\"CHCl3 has a C-H bond which is lighter than C-Cl bonds. When atoms are lighter, frequency increases. \"",
 StandardForm],"Print",ExpressionUUID -> "ec0aa3ea-f197-4b52-b997-13268f399daf"]},
 Open],ExpressionUUID -> "fb41b827-8448-483c-b62e-c02185a19649"]},Open],ExpressionUUID -> "10f84d7c-08fa-48c4-a91c-8ec02f3d9cb5"],Cell[
 CellGroupData[
 {Cell[
-TextData[{"Question"," ","5",":"}],"Chapter",ExpressionUUID -> "94aa2415-01b1-48bf-a0e4-fe45a04245d7"],Cell[
+TextData[{"Vibrational Mode Assignments"}],"Chapter",ExpressionUUID -> "94aa2415-01b1-48bf-a0e4-fe45a04245d7"],Cell[
 TextData[
 {"Using"," ","the"," ","experimental"," ","frequencies"," ","and"," ","degeneracy"," ","patterns"," ","identified"," ","in"," ","the"," ","previous"," ","steps",StyleBox[
 RowBox[{","," "}]],"I"," ","assigned"," ","specific"," ","vibrational"," ","labels",StyleBox[
@@ -469,7 +468,7 @@ RowBox[{"."," "}]],"Table"," ","is"," ","in"," ","light"," ","yellow"," ","for",
 "Text",ExpressionUUID -> "e6971415-57ec-4edf-813e-d7cbaadb69e5"],Cell[
 CellGroupData[
 {Cell[
-BoxData[{StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{"Question"," ","5"}],":"," ",RowBox[
+BoxData[{StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[
 {RowBox[{"assign"," ",RowBox[{"vib","--"}]}],"-"}]}]," ","*)"}],"\n","\n",RowBox[
 {RowBox[{"assignments"," ","="," ",RowBox[{"{","\n","   ",RowBox[{RowBox[{"{",RowBox[
 {"\"Frequency (cm^-1)\"",","," ","\"Mode Label\"",","," ","\"Type of Vibration\"",","," ","\"Degeneracy\""}],"}"}],",","\n","   ",RowBox[
@@ -478,14 +477,14 @@ BoxData[{StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{"Question"," ","5"}],
 {"{",RowBox[{"\"459\"",","," ","\"v1\"",","," ","\"Symmetric Stretch\"",","," ","\"Singlet (A1)\""}],"}"}],",","\n","   ",RowBox[
 {"{",RowBox[{"\"760-790\"",","," ","\"v3\"",","," ","\"Asymmetric Stretch\"",","," ","\"Triplet (T2)\""}],"}"}]}],"\n","}"}]}],";"}]}]],RowBox[
 {"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{"display"," ","as"," ","a"," ","Grid"," ","and"," ","include"," ","degeneracy"}],"*)"}],"\n",RowBox[
-{RowBox[{"Print","[","\"Question 5: Vibrational Mode Assignments for CCl4\"","]"}],";"}]}]],"\n",RowBox[
+{RowBox[{"Print","[","\"Vibrational Mode Assignments for CCl4\"","]"}],";"}]}]],"\n",RowBox[
 {"Grid","[",RowBox[{"assignments",","," ","\n"," ",RowBox[{"Frame"," ","\[Rule]"," ","All"}],","," ","\n"," ",RowBox[
 {"Background"," ","\[Rule]"," ",RowBox[{"{",RowBox[{"None",","," ",RowBox[{"{","LightYellow","}"}]}],"}"}]}],","," ","\n"," ",RowBox[
 {"Alignment"," ","\[Rule]"," ","Left"}],","," ","\n"," ",RowBox[{"BaseStyle"," ","\[Rule]"," ",RowBox[
 {"{",RowBox[{RowBox[{"FontSize"," ","\[Rule]"," ","12"}],","," ",RowBox[{"FontFamily"," ","\[Rule]"," ","\"Arial\""}]}],"}"}]}]}],"\n","]"}]}],
 "Input",CellLabel -> "In[316]:= ",ExpressionUUID -> "78875680-c838-43b6-8539-dcccca452e38"],Cell[
 BoxData[
-"\"Question 5: Vibrational Mode Assignments for CCl4\"",StandardForm],"Print",ExpressionUUID -> "024ea898-e2b9-42e7-af40-bce0f8827d8d"],Cell[
+"\"Vibrational Mode Assignments for CCl4\"",StandardForm],"Print",ExpressionUUID -> "024ea898-e2b9-42e7-af40-bce0f8827d8d"],Cell[
 BoxData[
 TagBox[GridBox[{{"\"Frequency (cm^-1)\"","\"Mode Label\"","\"Type of Vibration\"","\"Degeneracy\""},{"\"219\"","\"v2\"","\"Bend\"","\"Doublet (E)\""},{"\"314\"","\"v4\"","\"Bend\"","\"Triplet (T2)\""},{"\"459\"","\"v1\"","\"Symmetric Stretch\"","\"Singlet (A1)\""},{"\"760-790\"","\"v3\"","\"Asymmetric Stretch\"","\"Triplet (T2)\""}},
 GridBoxAlignment -> {"Columns" -> {{Left}}},AutoDelete -> False,GridBoxBackground -> {"Columns" -> {{None}},"Rows" -> {RGBColor[
@@ -495,21 +494,21 @@ CellLabel -> "Out[318]= ",ExpressionUUID -> "e9899d4a-7c1d-4a7b-a6bb-326d24b72e4
 Open],ExpressionUUID -> "4f25baa0-ecf9-4f0e-9de2-e725a8c42541"]},Open],ExpressionUUID -> "f94bf531-4815-4e9c-983a-99c029255795"],Cell[
 CellGroupData[
 {Cell[
-TextData[{"Question"," ","6",":"}],"Chapter",ExpressionUUID -> "99f02555-8e02-41f4-b524-dcb95ee54178"],Cell[
+TextData[{"Fermi Resonance Analysis"}],"Chapter",ExpressionUUID -> "99f02555-8e02-41f4-b524-dcb95ee54178"],Cell[
 TextData[
 {"I"," ","calculated"," ","the"," ","sum"," ","of"," ","v1"," ","and"," ","v4"," ","to"," ","determine"," ","that"," ","the"," ","combination"," ","band"," ","has"," ","nearly"," ","the"," ","same"," ","energy"," ","as"," ","the"," ","v3"," ","fundamental"," ","mode",StyleBox[
 RowBox[{"."," "}]],"This"," ","overlap"," ","hints"," ","that"," ","the"," ","splitting"," ","is"," ","caused"," ","by"," ","Fermi"," ","resonance","."}],
 "Text",ExpressionUUID -> "41c3bd58-c30a-4507-a311-824d568ea1dd"],Cell[
 CellGroupData[
 {Cell[
-BoxData[{RowBox[{"\n",RowBox[{"(*"," ",RowBox[{RowBox[{"Question"," ","6"}],":",RowBox[
+BoxData[{RowBox[{"\n",RowBox[{"(*"," ",RowBox[{RowBox[
 {"fermi"," ","calc"}]}]," ","*)"}],"\n","\n",RowBox[{"(*"," ",RowBox[{"define"," ","using"," ","data"," ","from"," ","my"," ","table"}],"*)"}],"\n",RowBox[
 {RowBox[{"v1"," ","="," ","459"}],";"}]," ",RowBox[{"(*"," ",RowBox[{"Symmetric"," ","Stretch"}]," ","*)"}]}],"\n",RowBox[
 {RowBox[{RowBox[{"v4"," ","="," ","314"}],";"}]," ",RowBox[{"(*"," ","Bend"," ","*)"}]}],RowBox[
 {"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{"2."," ","Calculate"," ","the"," ","Combination"," ","Band"}]," ","*)"}],"\n",RowBox[
 {RowBox[{"combinationBand"," ","="," ",RowBox[{"v1"," ","+"," ","v4"}]}],";"}]}]],RowBox[
 {"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{"3."," ","Display"," ","the"," ","Logic"}]," ","*)"}],"\n",RowBox[
-{RowBox[{"Print","[","\"Question 6: Fermi Resonance Analysis\"","]"}],";"}]}]],"\n",RowBox[
+{RowBox[{"Print","[","\"Fermi Resonance Analysis\"","]"}],";"}]}]],"\n",RowBox[
 {RowBox[{"Print","[",RowBox[{"\"Fundamental v1 (A1): \"",","," ","v1",","," ","\" cm^-1\""}],"]"}],";"}],"\n",RowBox[
 {RowBox[{"Print","[",RowBox[{"\"Fundamental v4 (T2): \"",","," ","v4",","," ","\" cm^-1\""}],"]"}],";"}],"\n",RowBox[
 {RowBox[{"Print","[",RowBox[{"\"Calculated Combination (v1 + v4): \"",","," ","combinationBand",","," ","\" cm^-1\""}],"]"}],";"}],RowBox[
@@ -518,7 +517,7 @@ BoxData[{RowBox[{"\n",RowBox[{"(*"," ",RowBox[{RowBox[{"Question"," ","6"}],":",
 {RowBox[{RowBox[{"Print","[","\"Therefore, the Fermi resonance splitting is caused by the interaction between the v3 fundamental mode and the (v1 + v4) combination band, which share the same T2 symmetry.\"","]"}],";"}],"\n","\n"}]}],
 "Input",CellLabel -> "In[300]:= ",ExpressionUUID -> "65448273-20f0-41f6-bbc5-2ae7ab25648b"],Cell[
 BoxData[
-"\"Question 6: Fermi Resonance Analysis\"",StandardForm],"Print",ExpressionUUID -> "9db960b9-53fd-4b6c-a18d-e86fd7415ee0"],Cell[
+"\"Fermi Resonance Analysis\"",StandardForm],"Print",ExpressionUUID -> "9db960b9-53fd-4b6c-a18d-e86fd7415ee0"],Cell[
 BoxData[
 InterpretationBox[RowBox[{"\"Fundamental v1 (A1): \"","\[InvisibleSpace]","459","\[InvisibleSpace]","\" cm^-1\""}],
 SequenceForm["Fundamental v1 (A1): ",459," cm^-1"],Editable -> False],StandardForm],
@@ -544,16 +543,16 @@ StandardForm],"Print",ExpressionUUID -> "225b8ae7-9a32-42dd-9ee8-779453373034"]}
 Open],ExpressionUUID -> "c2cc7968-365f-4dec-87fe-50ac27f7e484"]},Open],ExpressionUUID -> "361a9a01-be09-45de-ba25-9ecc4fddb729"],Cell[
 CellGroupData[
 {Cell[
-TextData[{"Question"," ","7",":"}],"Chapter",ExpressionUUID -> "57789b84-35af-462c-86ba-9c7571061c2c"],Cell[
+TextData[{"Valence Force Model Calculations"}],"Chapter",ExpressionUUID -> "57789b84-35af-462c-86ba-9c7571061c2c"],Cell[
 TextData[
 {"I"," ","applied"," ","the"," ","Valence"," ","Force"," ","FIeld"," ","model"," ","to"," ","calculate"," ","the"," ","C","-","Cl"," ","stretching"," ","and"," ","bending"," ","force"," ","constants"," ","using"," ","my"," ","experimental"," ","v1"," ","and"," ","v2",StyleBox[
 RowBox[{"."," "}]],"I"," ","then"," ","used"," ","them"," ","to"," ","predict"," ","v3"," ","and"," ","v4","."}],
 "Text",ExpressionUUID -> "9bab0a1a-7186-4e06-866c-a0d2ac4151a3"],Cell[
 CellGroupData[
 {Cell[
-BoxData[{RowBox[{"\n",RowBox[{"(*"," ",RowBox[{RowBox[{"Question"," ","7"}],":"," ",RowBox[
+BoxData[{RowBox[{"\n",RowBox[{"(*"," ",RowBox[{" ",RowBox[
 {"FORCE"," ","CONSTANTS"," ",RowBox[{"(",RowBox[{"i"," ","used"," ","NSOLVE"}],")"}]}]}]," ","*)"}],"\n","\n",RowBox[
-{RowBox[{"Print","[","\"Question 7: Valence Force Model Calculations\"","]"}],";"}]}],RowBox[
+{RowBox[{"Print","[","\"Valence Force Model Calculations\"","]"}],";"}]}],RowBox[
 {"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*","CONSTANTS","*)"}],"\n",RowBox[{RowBox[
 {"c"," ","="," ",RowBox[{"2.9979"," ","*"," ",RowBox[{"10","^","10"}]}]}],";"}],"       ",RowBox[
 {"(*"," ",RowBox[{"Speed"," ","of"," ","light"," ","in"," ",RowBox[{"cm","/","s"}]}]," ","*)"}]}]],"\n",RowBox[
@@ -620,7 +619,7 @@ RowBox[{RowBox[{"(*"," ",RowBox[{"Convert"," ","Eigenvalues"," ",RowBox[{"(","la
 {"ToString","[","v3Expt","]"}]," ","<>"," ","\" cm^-1). This large discrepancy is expected and confirms that the simple Valence Force Field model (which ignores interaction constants) fails to accurately model the high-energy asymmetric stretch of CCl4.\""}],"]"}],";"}],"\n"}]}],
 "Input",CellLabel -> "In[348]:= ",ExpressionUUID -> "7c709bb4-9900-417e-b649-0efa4f10b2d3"],Cell[
 BoxData[
-"\"Question 7: Valence Force Model Calculations\"",StandardForm],"Print",ExpressionUUID -> "61790447-10bf-4691-8f90-9df87f24d288"],Cell[
+"\"Valence Force Model Calculations\"",StandardForm],"Print",ExpressionUUID -> "61790447-10bf-4691-8f90-9df87f24d288"],Cell[
 BoxData[
 "\"\"",StandardForm],"Print",ExpressionUUID -> "a30b3723-3343-499d-a91b-9368c9c0294a"],Cell[
 BoxData[
@@ -666,14 +665,14 @@ StandardForm],"Print",ExpressionUUID -> "8be9ce00-fb17-4949-bae1-ba9593af36ac"]}
 Open],ExpressionUUID -> "8521311c-254f-44d8-8a4b-60cbc459dd82"]},Open],ExpressionUUID -> "78d25fe9-fdfa-46f4-90d1-54305e64a93e"],Cell[
 CellGroupData[
 {Cell[
-TextData[{"Question"," ","8",":"}],"Chapter",ExpressionUUID -> "2dfae464-5762-48f9-be52-e473e6d78b22"],Cell[
+TextData[{"NIST Literature Comparison"}],"Chapter",ExpressionUUID -> "2dfae464-5762-48f9-be52-e473e6d78b22"],Cell[
 TextData[
 {"Compared"," ","the"," ","determined"," ","peak"," ","frequencies"," ","against"," ","NIST"," ","values"," ","and"," ","concluded"," ","there"," ","was"," ","most"," ","likely"," ","a"," ","calibration"," ","error",StyleBox[
 RowBox[{"."," "}]]}],"Text",ExpressionUUID -> "cb2a6e3d-3a8d-437f-9013-6572aaa85559"],Cell[
 CellGroupData[
 {Cell[
 BoxData[{RowBox[{"\n","\n",RowBox[{RowBox[{"Print","[","\"------------------------------------------------\"","]"}],";"}]}],"\n",RowBox[
-{RowBox[{"Print","[","\"Question 8: NIST Literature Comparison\"","]"}],";"}],RowBox[
+{RowBox[{"Print","[","\"NIST Literature Comparison\"","]"}],";"}],RowBox[
 {"\n","\n"}],StyleBox[RowBox[{RowBox[{"(*"," ",RowBox[{RowBox[{"write"," ","nist"," ","values"," ","in"," ",RowBox[
 {"cm","^",RowBox[{"-","1"}]}]}],","," ",RowBox[{"and"," ","label"," ","mode"}]}]," ","*)"}],"\n",RowBox[
 {"(*"," ",RowBox[{"Source",":"," ",RowBox[{"NIST"," ","Chemistry"," ","WebBook"}]}]," ","*)"}],"\n",RowBox[
@@ -722,7 +721,7 @@ RowBox[{RowBox[{"(*"," ",RowBox[{"answer"," ","questions"}]," ","*)"}],"\n",RowB
 BoxData[
 "\"------------------------------------------------\"",StandardForm],"Print",ExpressionUUID -> "7bcdab3e-ba0a-4062-a3ab-3680c5e0d492"],Cell[
 BoxData[
-"\"Question 8: NIST Literature Comparison\"",StandardForm],"Print",ExpressionUUID -> "980d527f-7e24-4e6e-b87b-df8accca1370"],Cell[
+"\"NIST Literature Comparison\"",StandardForm],"Print",ExpressionUUID -> "980d527f-7e24-4e6e-b87b-df8accca1370"],Cell[
 BoxData[
 "\"\"",StandardForm],"Print",ExpressionUUID -> "2c5badbe-2fad-4d07-896e-37303ff8de24"],Cell[
 BoxData[
